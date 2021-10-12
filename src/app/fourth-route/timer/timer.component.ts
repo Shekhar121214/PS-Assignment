@@ -13,7 +13,7 @@ export class TimerComponent implements OnInit {
   constructor(private exporterService: ExporterService) { }
 
   ngOnInit(): void {
-    this.exporterService.getTimer$.subscribe(timer => {
+    this.exporterService.getTimer$.subscribe((timer: any) => {
       this.initiateTime = timer;
     });
   }

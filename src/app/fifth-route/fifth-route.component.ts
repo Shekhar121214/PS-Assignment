@@ -54,7 +54,6 @@ export class FifthRouteComponent implements OnInit, OnDestroy {
 
     this.http.get('https://www.ag-grid.com/example-assets/olympic-winners.json').subscribe((data: any) => {
         this.rowData = data;
-        console.log(data)
       });
   }
 

@@ -11,11 +11,10 @@ export class ExporterService {
   private sendTimerCondn = new BehaviorSubject('');
   public getTimerCondn$= this.sendTimerCondn.asObservable();
 
-  private sendTimer = new BehaviorSubject(0);
+  private sendTimer: any = new BehaviorSubject(null);
   public getTimer$= this.sendTimer.asObservable();
 
   setTimerCondn(data: string){
-    console.log('cndn', data);
     this.sendTimerCondn.next(data);
   }
 

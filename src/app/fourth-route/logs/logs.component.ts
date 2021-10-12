@@ -49,9 +49,8 @@ export class LogsComponent implements OnInit {
     if (second.toString().length == 1) {
       second = '0' + second;
     }
-    const dd = `${day}-${month}-${year} ${hour}:${minute}:${second} ${ampm} `
-    console.log(dd);
-    return dd;
+    const dateTime = `${day}-${month}-${year} ${hour}:${minute}:${second} ${ampm} `
+    return dateTime;
   }
 
 }

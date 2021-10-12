@@ -17,7 +17,6 @@ export class StartPauseComponent implements OnInit,OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges){
-    console.log(this.currentState);
     if(this.currentState === 'start'){
       this.startCount += 1;
    } 

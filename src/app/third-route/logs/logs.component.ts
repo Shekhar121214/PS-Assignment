@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-logs',
@@ -14,8 +14,7 @@ export class LogsComponent implements OnInit,OnChanges {
   ngOnInit(): void {
   }
 
-  ngOnChanges(changes: SimpleChanges){
-    console.log(this.currentState);
+  ngOnChanges(){
     const currentTime = this.getDateTime();
     if(this.currentState === 'start'){
        this.logs.push(`Started at ${currentTime}`)
@@ -49,9 +48,8 @@ export class LogsComponent implements OnInit,OnChanges {
     if (second.toString().length == 1) {
       second = '0' + second;
     }
-    const dd = `${day}-${month}-${year} ${hour}:${minute}:${second} ${ampm} `
-    console.log(dd);
-    return dd;
+    const dateTime = `${day}-${month}-${year} ${hour}:${minute}:${second} ${ampm} `
+    return dateTime;
   }
 
 }

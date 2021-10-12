@@ -34,12 +34,16 @@ export class DataComponent implements OnInit {
   }
 
   btnHandler(ev: string){
-    if(!this.deviceForm.controls.initialTime.value) return alert('please enter the number first')
+    const enteredValue = this.deviceForm.controls.initialTime.value;
+    if(!enteredValue || enteredValue <= 0) return alert('please enter the valid number');
+    if(isNaN(enteredValue)) return alert('Only numbers are allowed');
     if(ev === 'reset'){
       this.currentState = 'pause';
       this.firstTimeTimerStart = true;
-      this.timer = this.deviceForm.controls.initialTime.value; 
-      clearInterval(this.timer)   
+      this.timer = this.deviceForm.controls.initialTime.value;      
+      clearInterval(this.timer);
+      this.isPuased = true;
+      this.exporterService.setTimer(this.timer);
     } else {
       this.currentState = this.currentState === 'start' ? 'pause' : 'start';
       this.timerState.emit(this.currentState);
@@ -54,10 +58,11 @@ export class DataComponent implements OnInit {
       this.firstTimeTimerStart = false;
      const contDown =  setInterval(()=>{
         if(!this.isPuased){
-          this.timer--
           if(this.timer === 0){
-            clearInterval(contDown)
+            clearInterval(contDown);
+            return;
           }
+          this.timer--
         }
         this.exporterService.setTimer(this.timer);
       },1000)
