@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="column border border-primary">
+        <app-timer [initiateTime]="initiateTime"></app-timer>
+    </div>
+    <div class="column border border-primary">
+        <app-data (timeEmmiter)="getTimer($event)" (timerState)="getState($event)">
+        </app-data>
+    </div>
+    <div class="column border border-primary">
+        <app-logs [currentState]="currentState"></app-logs>
+    </div>
+    <div class="column border border-primary">
+        <app-start-pause [currentState]="currentState"></app-start-pause>
+    </div>
+</div>

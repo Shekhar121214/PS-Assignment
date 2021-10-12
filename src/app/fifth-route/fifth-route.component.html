@@ -1,0 +1,13 @@
+
+<div class="test-container mt-2">
+    <ag-grid-angular
+      #agGrid
+      id="myGrid"
+      class="ag-theme-alpine"
+      [columnDefs]="columnDefs"
+      [defaultColDef]="defaultColDef"
+      [debug]="true"
+      [rowData]="rowData"
+      (gridReady)="onGridReady($event)"
+    ></ag-grid-angular>
+  </div>

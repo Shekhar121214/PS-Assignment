@@ -1,0 +1,23 @@
+
+<div class="mt-4">
+    <button type="button" class="btn btn-info ml-2" (click)="changeView('grid')">Grid <i
+        class="fas fa-th-large"></i></button>
+<button type="button" class="btn btn-info ml-2" (click)="changeView('list')">List <i
+        class="fas fa-bars"></i></button>
+
+
+<select name="priceSelection" id="priceSelect" class="custom-select" [(ngModel)]="chosenMode"
+    (ngModelChange)="filterData()">
+    <option value="high">High first</option>
+    <option selected value="low">Low first</option>
+</select>
+
+<div id="wrapper">
+    <ng-container *ngFor="let item of productsArr">
+        <div style="display: inline-block;">
+            <div class="boxMode"></div>
+            <p style="text-align: center;">price: {{item.price}}rs.</p>
+        </div>
+    </ng-container>
+</div>
+</div>

@@ -1,0 +1,5 @@
+<div *ngFor="let item of divsPropArray; let i = index">
+    <div class="fixedData" [ngStyle]="{'height.px':item.ht, 'width.px': item.wd}">
+        <span class="rotate" *ngIf="i === 0"> Hey </span>
+    </div>
+</div>

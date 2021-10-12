@@ -1,0 +1,10 @@
+<div *ngIf="!numbersArray.length">
+   data not loaded properly :(
+</div>
+<div class="mt-4">
+    <ng-container *ngFor="let i of numbersArray">
+        <div class="box">
+            <button type="button" class="btn btn-primary" (click)="btnClicked(i)">{{i}}</button>
+        </div>
+    </ng-container>
+</div>

@@ -1,0 +1,26 @@
+.boxMode{
+    height: 200px;
+    min-width: 200px;
+    background: #fbfb82;
+    margin: 5px;
+    border: 1px solid;
+    border-radius: 3px;
+    // display: inline-block;
+    text-align: center;
+    line-height: 162px;
+}
+
+#wrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.custom-select{
+    background: #0dcaf0;
+    border-radius: 5px;
+    width: 100px;
+    height: 35px;
+    margin-left: 5px;
+}
+
