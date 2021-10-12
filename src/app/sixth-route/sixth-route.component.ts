@@ -29,7 +29,7 @@ export class SixthRouteComponent implements OnInit, OnDestroy {
 
   btnClicked(index: number){
     const suffix = this.suffixHandler(index)
-    alert(`Button  in ${index}${suffix} div  clicked.`)
+    alert(`Button in ${index}${suffix} div clicked.`)
   }
 
   suffixHandler(n: number){
