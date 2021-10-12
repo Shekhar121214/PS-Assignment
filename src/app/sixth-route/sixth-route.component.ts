@@ -28,7 +28,12 @@ export class SixthRouteComponent implements OnInit, OnDestroy {
   }  
 
   btnClicked(index: number){
-    alert(`Button  in ${index}th div  clicked `)
+    const suffix = this.suffixHandler(index)
+    alert(`Button  in ${index}${suffix} div  clicked.`)
+  }
+
+  suffixHandler(n: number){
+    return["st","nd","rd"][((n+90)%100-10)%10-1] || "th"
   }
 
   ngOnDestroy(){
