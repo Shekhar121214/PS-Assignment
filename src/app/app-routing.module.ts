@@ -26,10 +26,10 @@ const routes: Routes = [
     path: 'sixthRoute',
     loadChildren: () => import('./sixth-route/sixth-route.module').then(m => m.SixthRouteModule)
   },
-// {
-//   path: '**',
-//   redirectTo: '/firstRoute',
-// }
+  {
+    path: '**',
+    redirectTo: '/firstRoute',
+  }
 ];
 
 @NgModule({
